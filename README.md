@@ -14,6 +14,7 @@ Create models.py <br>
           profile_pic: str <br>
           birth_date: datetime <br>
           level: int, default 0 <br>
+          
     <br>
    -Optional attributes:  <br>
        profile_pic, <br>
@@ -35,6 +36,7 @@ Create models.py <br>
    -attribut list:  <br>
        about: str  <br>
        listeners_count: int  <br>
+        <br>
    -method list:  <br>
        --add_song(self, title: str, artist_name: str, file: string)  <br>
           for now file argument should be just file's path on your computer  <br>
@@ -42,6 +44,8 @@ Create models.py <br>
        --create_album(self, title, label, year, list_of_song_url=[])  <br>
        --delete_album(self, album_id)  <br>
         <br>
+        
+        
 3. Create Song class.  <br>
     -attribute list:  <br>
         id: generate id number for each object  <br>
@@ -53,7 +57,7 @@ Create models.py <br>
         created_by: artist  <br>
         streams_count: int  <br>
         album: album if no album created default create album with same nam as song (for singles)  <br>
-        
+         <br>
     -method list:
         --validate(self): if  created_by is not an Artist objects raise Exception('Access denied.')  <br>
         --add_to_playlist(self, playlist, user)  <br>
@@ -62,6 +66,8 @@ Create models.py <br>
         --stop(self, user) # increment sream count if played 30 seconds at least  <br>
         --download(self) # returns song path for now  <br>
      <br>
+     
+     
  4. Create Playlist class  <br>
      -attribute list:  <br>
         id: generate id number for each object  <br>
@@ -69,21 +75,28 @@ Create models.py <br>
         date_added: datetime  <br>
         created_by: User  <br>
         picture_url: picture_url  <br>
+         <br>
      -property:
          count_of_songs  <br>
          duration_of_playlist  <br>
          genre_list   <br>
+          <br>
      -method_list:  <br>
         --play() play all tracks in playlist in order added_date  <br>
         --stop()   <br>
       <br>
+      
+      
  5. Create Album class and inherit it from Playlist.  <br> 
     -attribute list:  <br>
        label: str  <br>
        year: str  <br>
+        <br>
     -method list:  <br>
        --validate() if created_by is not Artist object raise Exception('Access denied.')  <br>
   <br>
+  
+  
  6. class SongPlayes  <br>
     -attribute list:  <br>
        id: generate id number for each object  <br>
@@ -91,6 +104,7 @@ Create models.py <br>
        song: Song  <br>
        start_timestamp: float  <br>
        
+        <br>
  7. class PlaylistSong: (this class should help to find out song's playlists and playlist's songs)  <br>
     -attribut list  <br>
         playlist: Playlist  <br>
